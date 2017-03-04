@@ -153,6 +153,9 @@ TARGET_FORCE_HWC_FOR_VIRTUAL_DISPLAYS := true
 # Enable dexpreopt to speed boot time
 # WITH_DEXPREOPT := true
 
+# Filesystem
+TARGET_ANDROID_FILESYSTEM_CONFIG_H := $(VENDOR_PATH)/android_filesystem_config.h
+
 # Init
 TARGET_INIT_VENDOR_LIB := libinit_z2_plus
 TARGET_RECOVERY_DEVICE_MODULES := libinit_z2_plus
