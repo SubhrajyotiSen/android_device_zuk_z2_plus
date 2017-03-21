@@ -145,6 +145,10 @@ PRODUCT_PACKAGES += \
     liboverlay \
     libtinyxml
 
+# Doze mode
+PRODUCT_PACKAGES += \
+    ZukDoze
+
 # Fingerprint
 PRODUCT_PACKAGES += \
     fingerprintd
