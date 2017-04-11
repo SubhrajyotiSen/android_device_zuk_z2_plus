@@ -255,6 +255,10 @@ PRODUCT_PACKAGES += \
     timekeep \
     TimeKeep
 
+# Subsystem silent restart
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.sys.ssr.restart_level=venus,AR6320,slpi,modem,adsp
+
 # Sensors
 PRODUCT_PACKAGES += \
     sensors.msm8996
