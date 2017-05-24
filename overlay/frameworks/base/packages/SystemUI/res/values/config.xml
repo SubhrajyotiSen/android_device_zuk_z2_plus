@@ -43,5 +43,8 @@
     <!-- Doze: pulse parameter - delay to wait for the screen to wake up after an intent -->
     <integer name="doze_pulse_delay_in_intent">0</integer>
 
+    <!-- Whether QuickSettings is in a phone landscape -->
+    <bool name="quick_settings_wide">true</bool>
+
 </resources>
 
