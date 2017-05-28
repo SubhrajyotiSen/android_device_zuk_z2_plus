@@ -28,7 +28,7 @@
         </receiver>
 
         <service android:name="com.cyanogenmod.settings.doze.DozeService"
-                 android:permission="ZukDozeService">
+                 android:permission="XiaomiDozeService">
         </service>
 
         <activity
