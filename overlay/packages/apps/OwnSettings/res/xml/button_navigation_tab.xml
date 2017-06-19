@@ -1,56 +1,274 @@
 <?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen android:title="@string/button_navigation_tab" android:key="button_navigation_tab.xml"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <SwitchPreference android:title="@string/disable_navkeys_title" android:key="disable_nav_keys" android:summary="@string/disable_navkeys_summary" android:defaultValue="false" />
-    <org.cyanogenmod.cmparts.input.ButtonBacklightBrightness android:persistent="false" android:title="@string/button_backlight_title" android:key="button_backlight" android:dialogTitle="@string/button_backlight_title" />
-    <PreferenceCategory android:title="@string/navigation_bar_category" android:key="navigation_bar_category">
-        <cyanogenmod.preference.CMSystemSettingSwitchPreference android:title="@string/navigation_bar_left_title" android:key="navigation_bar_left" android:summary="@string/navigation_bar_left_summary" android:defaultValue="false" />
-        <cyanogenmod.preference.CMSystemSettingSwitchPreference android:title="@string/navigation_bar_arrow_keys_title" android:key="navigation_bar_menu_arrow_keys" android:summary="@string/navigation_bar_arrow_keys_summary" android:defaultValue="false" />
-        <PreferenceScreen android:title="@string/navigation_bar_title" android:key="navigation_bar">
-            <intent android:action="com.android.settings.action.NAV_BAR_TUNER" />
-        </PreferenceScreen>
-        <ListPreference android:persistent="false" android:entries="@array/hardware_keys_action_entries" android:title="@string/navigation_bar_home_long_press_title" android:key="navigation_home_long_press" android:dialogTitle="@string/navigation_bar_home_long_press_title" android:entryValues="@array/hardware_keys_action_values" />
-        <ListPreference android:persistent="false" android:entries="@array/hardware_keys_action_entries" android:title="@string/navigation_bar_home_double_tap_title" android:key="navigation_home_double_tap" android:dialogTitle="@string/navigation_bar_home_double_tap_title" android:entryValues="@array/hardware_keys_action_values" />
-        <ListPreference android:persistent="false" android:title="@string/navigation_bar_recents_title" android:key="navigation_recents_long_press" android:dialogTitle="@string/navigation_bar_recents_title" />
+<!-- Copyright (C) 2015-2017 The OwnROM Project
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<PreferenceScreen
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
+        android:title="@string/button_navigation_tab">
+
+    <PreferenceCategory
+        android:key="category_softkeys"
+        android:title="@string/softkeys_title" >
+        
+		<SwitchPreference
+			android:key="navbar_visibility"
+			android:title="@string/navbar_visibility" />
+
     </PreferenceCategory>
-    <PreferenceCategory android:title="@string/hardware_keys_power_key_title" android:key="power_key">
-        <PreferenceScreen android:title="@string/power_menu_title" android:key="power_menu" android:fragment="org.cyanogenmod.cmparts.input.PowerMenuActions" />
-        <SwitchPreference android:persistent="false" android:title="@string/power_end_call_title" android:key="power_end_call" android:summary="@string/power_end_call_summary" />
+    
+    <PreferenceCategory
+        android:key="category_navbar_interface"
+        android:title="@string/navbar_interface_title" >
+
+        <ListPreference
+            android:entries="@array/systemui_navbar_mode_entries"
+            android:entryValues="@array/systemui_navbar_mode_values"
+            android:key="navbar_mode"
+            android:title="@string/navbar_mode" />
+
+        <PreferenceScreen
+            android:key="smartbar_settings"
+            android:title="@string/smartbar_settings_title"
+            android:fragment="com.own.settings.javas.SmartbarSettings" />
+
+        <PreferenceScreen
+            android:key="fling_settings"
+            android:title="@string/fling_settings"
+            android:fragment="com.own.settings.javas.FlingSettings" />
+
     </PreferenceCategory>
-    <PreferenceCategory android:title="@string/hardware_keys_home_key_title" android:key="home_key">
-        <cyanogenmod.preference.CMSystemSettingSwitchPreference android:title="@string/button_wake_title" android:key="home_wake_screen" android:defaultValue="true" />
-        <SwitchPreference android:persistent="false" android:title="@string/home_answer_call_title" android:key="home_answer_call" android:summary="@string/home_answer_call_summary" />
-        <ListPreference android:persistent="false" android:entries="@array/hardware_keys_action_entries" android:title="@string/hardware_keys_long_press_title" android:key="hardware_keys_home_long_press" android:dialogTitle="@string/hardware_keys_long_press_title" android:entryValues="@array/hardware_keys_action_values" />
-        <ListPreference android:persistent="false" android:entries="@array/hardware_keys_action_entries" android:title="@string/hardware_keys_double_tap_title" android:key="hardware_keys_home_double_tap" android:dialogTitle="@string/hardware_keys_double_tap_title" android:entryValues="@array/hardware_keys_action_values" />
+
+    <PreferenceCategory
+        android:key="category_navbar_general"
+        android:title="@string/navbar_general_title" >
+
+           <com.own.settings.javas.SeekBarPreference
+                android:key="navbar_height_portrait"
+                android:title="@string/portrait_title"
+                settings:max="135"
+                settings:min="65"
+                settings:units="%" />
+
+           <com.own.settings.javas.SeekBarPreference
+                android:key="navbar_height_landscape"
+                android:title="@string/land_hor_title"
+                settings:max="135"
+                settings:min="65"
+                settings:units="%" />
+
+           <com.own.settings.javas.SeekBarPreference
+                android:key="navbar_width"
+                android:title="@string/land_vert_title"
+                settings:max="135"
+                settings:min="65"
+                settings:units="%" />
+                
+			<PreferenceScreen
+				android:key="pulse_settings"
+				android:title="@string/pulse_settings"
+				android:fragment="com.own.settings.javas.PulseSettings" />
+
     </PreferenceCategory>
-    <PreferenceCategory android:title="@string/hardware_keys_utouch_settings_title">
-      <ListPreference android:persistent="false" android:entries="@array/hardware_keys_action_entries" android:title="@string/hardware_keys_long_tap_key_title" android:key="hardware_keys_assist_press" android:dialogTitle="@string/hardware_keys_action" android:entryValues="@array/hardware_keys_action_values" />
-      <ListPreference android:persistent="false" android:entries="@array/hardware_keys_action_entries" android:title="@string/hardware_keys_swipe_right_key_title" android:key="hardware_keys_menu_press" android:dialogTitle="@string/hardware_keys_action" android:entryValues="@array/hardware_keys_action_values" />
-      <ListPreference android:persistent="false" android:entries="@array/hardware_keys_action_entries" android:title="@string/hardware_keys_swipe_left_key_title" android:key="hardware_keys_app_switch_press" android:dialogTitle="@string/hardware_keys_action" android:entryValues="@array/hardware_keys_action_values" />
+    
+    <PreferenceCategory
+        android:key="key_backlight"
+        android:title="@string/hardware_keys" >
+        
+		<com.own.settings.javas.ButtonBacklightBrightness
+			android:key="button_backlight"
+			android:title="@string/button_backlight_title"
+			android:summary="@string/button_backlight_summary"
+			android:dialogTitle="@string/button_backlight_title"
+			android:persistent="false" />
+
     </PreferenceCategory>
-    <PreferenceCategory android:title="@string/hardware_keys_back_key_title" android:key="back_key">
-        <cyanogenmod.preference.CMSystemSettingSwitchPreference android:title="@string/button_wake_title" android:key="back_wake_screen" android:defaultValue="false" />
+
+    <PreferenceCategory 
+    	android:title="@string/hardware_keys_utouch_settings_title">
+
+      	<ListPreference 
+      		android:persistent="false" 
+      		android:entries="@array/hardware_keys_action_entries" 
+      		android:title="@string/hardware_keys_long_tap_key_title" android:key="hardware_keys_assist_press" 
+      		android:dialogTitle="@string/hardware_keys_action" 
+      		android:entryValues="@array/hardware_keys_action_values" />
+
+     	<ListPreference 
+     		android:persistent="false" 
+     		android:entries="@array/hardware_keys_action_entries" 
+     		android:title="@string/hardware_keys_swipe_right_key_title" android:key="hardware_keys_menu_press" 
+     		android:dialogTitle="@string/hardware_keys_action" 
+     		android:entryValues="@array/hardware_keys_action_values" />
+
+    	<ListPreference 
+    		android:persistent="false" 
+    		android:entries="@array/hardware_keys_action_entries" 
+    		android:title="@string/hardware_keys_swipe_left_key_title" android:key="hardware_keys_app_switch_press" 
+    		android:dialogTitle="@string/hardware_keys_action" 
+    		android:entryValues="@array/hardware_keys_action_values" />
+
+	</PreferenceCategory>
+    		
+    <PreferenceCategory
+        android:key="home_key"
+        android:title="@string/hardware_keys_home_key_title" >
+			
+        <cyanogenmod.preference.CMSystemSettingSwitchPreference
+            android:key="home_wake_screen"
+            android:title="@string/button_wake_title"
+            android:defaultValue="true" />
+
+        <SwitchPreference
+            android:key="home_answer_call"
+            android:title="@string/home_answer_call_title"
+            android:summary="@string/home_answer_call_summary"
+            android:persistent="false"/>
+
+        <ListPreference
+            android:key="hardware_keys_home_long_press"
+            android:dialogTitle="@string/hardware_keys_long_press_title"
+            android:title="@string/hardware_keys_long_press_title"
+            android:entries="@array/hardware_keys_action_entries"
+            android:entryValues="@array/hardware_keys_action_values"
+            android:persistent="false" />
+
+        <ListPreference
+            android:key="hardware_keys_home_double_tap"
+            android:dialogTitle="@string/hardware_keys_double_tap_title"
+            android:title="@string/hardware_keys_double_tap_title"
+            android:entries="@array/hardware_keys_action_entries"
+            android:entryValues="@array/hardware_keys_action_values"
+            android:persistent="false" />
+
     </PreferenceCategory>
-    <PreferenceCategory android:title="@string/hardware_keys_menu_key_title" android:key="menu_key" android:layout="@layout/empty_layout">
-        <cyanogenmod.preference.CMSystemSettingSwitchPreference android:title="@string/button_wake_title" android:key="menu_wake_screen" android:defaultValue="false" />
+
+    <PreferenceCategory
+        android:key="back_key"
+        android:title="@string/hardware_keys_back_key_title" >
+
+        <cyanogenmod.preference.CMSystemSettingSwitchPreference
+            android:key="back_wake_screen"
+            android:title="@string/button_wake_title"
+            android:defaultValue="false" />
+
+        <cyanogenmod.preference.CMSecureSettingSwitchPreference
+            android:key="kill_app_longpress_back"
+            android:title="@string/kill_app_longpress_back"
+            android:summary="@string/kill_app_longpress_back_summary"/>
+    
     </PreferenceCategory>
-    <PreferenceCategory android:title="@string/hardware_keys_assist_key_title" android:key="assist_key" android:layout="@layout/empty_layout" >
-        <cyanogenmod.preference.CMSystemSettingSwitchPreference android:title="@string/button_wake_title" android:key="assist_wake_screen" android:defaultValue="false" />
+
+    <PreferenceCategory
+        android:key="menu_key"
+        android:title="@string/hardware_keys_menu_key_title" >
+
+        <cyanogenmod.preference.CMSystemSettingSwitchPreference
+            android:key="menu_wake_screen"
+            android:title="@string/button_wake_title"
+            android:defaultValue="false" />
+
+        <ListPreference
+            android:key="hardware_keys_menu_press"
+            android:dialogTitle="@string/hardware_keys_short_press_title"
+            android:title="@string/hardware_keys_short_press_title"
+            android:entries="@array/hardware_keys_action_entries"
+            android:entryValues="@array/hardware_keys_action_values"
+            android:persistent="false" />
+
+        <ListPreference
+            android:key="hardware_keys_menu_long_press"
+            android:dialogTitle="@string/hardware_keys_long_press_title"
+            android:title="@string/hardware_keys_long_press_title"
+            android:entries="@array/hardware_keys_action_entries"
+            android:entryValues="@array/hardware_keys_action_values"
+            android:persistent="false" />
+
     </PreferenceCategory>
-    <PreferenceCategory android:title="@string/hardware_keys_appswitch_key_title" android:key="app_switch_key" android:layout="@layout/empty_layout">
-        <cyanogenmod.preference.CMSystemSettingSwitchPreference android:title="@string/button_wake_title" android:key="app_switch_wake_screen" android:defaultValue="false" />
+
+    <PreferenceCategory
+        android:key="assist_key"
+        android:title="@string/hardware_keys_assist_key_title" >
+
+        <cyanogenmod.preference.CMSystemSettingSwitchPreference
+            android:key="assist_wake_screen"
+            android:title="@string/button_wake_title"
+            android:defaultValue="false" />
+
+        <ListPreference
+            android:key="hardware_keys_assist_press"
+            android:dialogTitle="@string/hardware_keys_short_press_title"
+            android:title="@string/hardware_keys_short_press_title"
+            android:entries="@array/hardware_keys_action_entries"
+            android:entryValues="@array/hardware_keys_action_values"
+            android:persistent="false" />
+
+        <ListPreference
+            android:key="hardware_keys_assist_long_press"
+            android:dialogTitle="@string/hardware_keys_long_press_title"
+            android:title="@string/hardware_keys_long_press_title"
+            android:entries="@array/hardware_keys_action_entries"
+            android:entryValues="@array/hardware_keys_action_values"
+            android:persistent="false" />
+
     </PreferenceCategory>
-    <PreferenceCategory android:title="@string/hardware_keys_camera_key_title" android:key="camera_key">
-        <cyanogenmod.preference.CMSystemSettingSwitchPreference android:title="@string/button_wake_title" android:key="camera_wake_screen" android:defaultValue="false" />
-        <cyanogenmod.preference.CMSystemSettingSwitchPreference android:title="@string/camera_sleep_on_release_title" android:key="camera_sleep_on_release" android:summary="@string/camera_sleep_on_release_summary" android:defaultValue="false" />
-        <cyanogenmod.preference.CMSystemSettingSwitchPreference android:title="@string/camera_launch_title" android:key="camera_launch" android:summary="@string/camera_launch_summary" android:defaultValue="false" />
+
+    <PreferenceCategory
+        android:key="app_switch_key"
+        android:title="@string/hardware_keys_appswitch_key_title" >
+
+        <cyanogenmod.preference.CMSystemSettingSwitchPreference
+            android:key="app_switch_wake_screen"
+            android:title="@string/button_wake_title"
+            android:defaultValue="false" />
+
+        <ListPreference
+            android:key="hardware_keys_app_switch_press"
+            android:dialogTitle="@string/hardware_keys_short_press_title"
+            android:title="@string/hardware_keys_short_press_title"
+            android:entries="@array/hardware_keys_action_entries"
+            android:entryValues="@array/hardware_keys_action_values"
+            android:persistent="false" />
+
+        <ListPreference
+            android:key="hardware_keys_app_switch_long_press"
+            android:dialogTitle="@string/hardware_keys_long_press_title"
+            android:title="@string/hardware_keys_long_press_title"
+            android:entries="@array/hardware_keys_action_entries"
+            android:entryValues="@array/hardware_keys_action_values"
+            android:persistent="false" />
+
     </PreferenceCategory>
-    <PreferenceCategory android:title="@string/hardware_keys_volume_keys_title" android:key="volume_keys">
-        <cyanogenmod.preference.CMSystemSettingSwitchPreference android:title="@string/button_wake_title" android:key="volume_wake_screen" android:defaultValue="false" />
-        <cyanogenmod.preference.CMSystemSettingSwitchPreference android:title="@string/volume_answer_call_title" android:key="volume_answer_call" android:summary="@string/volume_answer_call_summary" android:defaultValue="false" />
-        <cyanogenmod.preference.CMSystemSettingSwitchPreference android:title="@string/volbtn_music_controls_title" android:key="volbtn_music_controls" android:summary="@string/volbtn_music_controls_summary" android:defaultValue="true" />
-        <cyanogenmod.preference.CMSystemSettingSwitchPreference android:title="@string/volume_keys_control_ring_stream_title" android:key="volume_keys_control_ring_stream" android:defaultValue="true" android:summaryOn="@string/volume_keys_control_ring_stream_summary_on" android:summaryOff="@string/volume_keys_control_ring_stream_summary_off" />
-        <ListPreference android:persistent="false" android:entries="@array/volbtn_cursor_control_entries" android:title="@string/volbtn_cursor_control_title" android:key="volume_key_cursor_control" android:dialogTitle="@string/volbtn_cursor_control_title" android:entryValues="@array/volbtn_cursor_control_values" />
-        <SwitchPreference android:title="@string/swap_volume_buttons_title" android:key="swap_volume_buttons" android:summary="@string/swap_volume_buttons_summary" />
+
+    <PreferenceCategory
+        android:key="camera_key"
+        android:title="@string/hardware_keys_camera_key_title">
+
+        <cyanogenmod.preference.CMSystemSettingSwitchPreference
+            android:key="camera_wake_screen"
+            android:title="@string/button_wake_title"
+            android:defaultValue="false" />
+
+        <cyanogenmod.preference.CMSystemSettingSwitchPreference
+            android:key="camera_sleep_on_release"
+            android:title="@string/camera_sleep_on_release_title"
+            android:summary="@string/camera_sleep_on_release_summary"
+            android:defaultValue="false" />
+
+        <cyanogenmod.preference.CMSystemSettingSwitchPreference
+            android:key="camera_launch"
+            android:title="@string/camera_launch_title"
+            android:summary="@string/camera_launch_summary"
+            android:defaultValue="false" />
+
     </PreferenceCategory>
+
 </PreferenceScreen>
