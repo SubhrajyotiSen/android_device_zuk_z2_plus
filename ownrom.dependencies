@@ -1,0 +1,12 @@
+[
+ {
+   "repository": "LineageOS/android_packages_apps_FlipFlap",
+   "target_path": "packages/apps/FlipFlap",
+   "revision": "cm-14.1"
+ },
+ {
+   "repository": "LineageOS/android_packages_resources_devicesettings",
+   "target_path": "packages/resources/devicesettings",
+   "revision": "cm-14.1"
+}
+]
