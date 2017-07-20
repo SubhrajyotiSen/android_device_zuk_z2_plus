@@ -1,1 +1,2 @@
 allow untrusted_app proc_stat:file r_file_perms;
+allow untrusted_app sysfs:file { read open getattr };
