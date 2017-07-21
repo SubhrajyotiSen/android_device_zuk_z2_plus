@@ -33,10 +33,6 @@ BOARD_VENDOR := zuk
 
 # Use Snapdragon LLVM, if available
 TARGET_USE_SDCLANG := true
-LOCAL_SDCLANG := true
-SDCLANG := true
-SDCLANG_PATH := prebuilts/clang/linux-x86/host/sdclang-3.8/bin
-SDCLANG_LTO_DEFS := device/qcom/common/sdllvm-lto-defs.mk
 
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := msm8996
@@ -199,6 +195,9 @@ TARGET_TAP_TO_WAKE_NODE := "/sys/devices/virtual/touch/tp_dev/gesture_on"
 
 # Timeservice
 BOARD_USES_QC_TIME_SERVICES := true
+
+# RIL
+TARGET_RIL_VARIANT := caf
 
 # Wifi
 BOARD_HAS_QCOM_WLAN := true
