@@ -1,0 +1,8 @@
+allow recovery apk_data_file:dir { open read };
+allow recovery apk_private_data_file:dir { getattr open read };
+allow recovery asec_image_file:dir { getattr open read };
+allow recovery dalvikcache_data_file:dir { open read };
+allow recovery rootfs:dir write;
+allow recovery selinuxfs:file write;
+allow recovery system_radio_prop:property_service set;
+

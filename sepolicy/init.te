@@ -1,2 +1,2 @@
 allow init debugfs:file write;
-
+allow init functionfs:dir mounton;
