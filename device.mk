@@ -274,6 +274,10 @@ PRODUCT_PACKAGES += \
     libxml2 \
     libprotobuf-cpp-full
 
+# Sensors
+PRODUCT_PACKAGES += \
+    android.hardware.sensors@1.0-impl
+
 # TimeKeep
 PRODUCT_PACKAGES += \
     timekeep \
