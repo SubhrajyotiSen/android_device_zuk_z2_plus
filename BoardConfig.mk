@@ -31,9 +31,6 @@ TARGET_SPECIFIC_HEADER_PATH := $(PLATFORM_PATH)/include
 
 BOARD_VENDOR := zuk
 
-# Use Snapdragon LLVM, if available
-TARGET_USE_SDCLANG := true
-
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := msm8996
 TARGET_NO_BOOTLOADER := true
@@ -76,9 +73,6 @@ TARGET_KERNEL_HEADER_ARCH := arm64
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
 TARGET_KERNEL_CONFIG := n7x-caf_z2_plus_defconfig
 TARGET_KERNEL_SOURCE := kernel/zuk/msm8996
-
-# QCOM hardware
-BOARD_USES_QCOM_HARDWARE := true
 
 # Audio
 AUDIO_USE_LL_AS_PRIMARY_OUTPUT := true
@@ -186,9 +180,6 @@ BOARD_SEPOLICY_DIRS += $(PLATFORM_PATH)/sepolicy
 
 # Sensors
 USE_SENSOR_MULTI_HAL := true
-
-# Tap to wake 
-TARGET_TAP_TO_WAKE_NODE := "/sys/devices/virtual/touch/tp_dev/gesture_on"
 
 # Wifi
 BOARD_HAS_QCOM_WLAN := true
