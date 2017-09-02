@@ -637,7 +637,7 @@ lib64/libextmedia_jni.so
 lib64/libtfa98xx.so
 lib64/libloc_eng.so
 lib64/libloc_api_v02.so
-lib64/hw/fingerprint.qcom.so
+lib64/hw/fingerprint.msm8996.so:lib64/hw/fingeprint.vendor.msm8996.so
 framework/qcrilhook.jar
 framework/dpmapi.jar
 framework/com.qti.location.sdk.jar
