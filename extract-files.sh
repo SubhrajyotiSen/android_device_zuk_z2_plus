@@ -45,7 +45,28 @@ else
     echo "If PATH_TO_EXPANDED_ROM is not specified, blobs will be extracted from"
     echo "the device using adb pull."
     exit 1
-  fi
+fi
+. "$HELPER"
+
+# Default to sanitizing the vendor folder before extraction
+CLEAN_VENDOR=true
+
+while [ "$1" != "" ]; do
+    case $1 in
+        -n | --no-cleanup )     CLEAN_VENDOR=false
+                                ;;
+        -s | --section )        shift
+                                SECTION=$1
+                                CLEAN_VENDOR=false
+                                ;;
+        * )                     SRC=$1
+                                ;;
+    esac
+    shift
+done
+
+if [ -z "$SRC" ]; then
+    SRC=adb
 fi
 
 BASE=../../../vendor/$VENDOR/$DEVICE/proprietary
