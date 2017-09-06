@@ -312,6 +312,9 @@ on boot
     # bond0 used by FST Manager
     chown wifi wifi /sys/class/net/bond0/bonding/queue_id
 
+    # Wifi firmware reload path
+    chown wifi wifi /sys/module/wlan/parameters/fwpath
+
     # change this when HAL3 is working
     setprop persist.camera.HAL3.enabled 0
 
