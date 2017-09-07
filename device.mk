@@ -244,9 +244,9 @@ PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:system/etc/media_codecs_google_telephony.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml
 
-# Miracast
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.debug.wfd.enable=1
+# Netutils
+PRODUCT_PACKAGES += \
+    netutils-wrapper-1.0
 
 # OMX
 PRODUCT_PACKAGES += \
