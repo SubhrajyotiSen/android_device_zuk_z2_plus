@@ -152,7 +152,7 @@ TARGET_USES_HWC2 := true
 SF_START_GRAPHICS_ALLOCATOR_SERVICE := true
 
 # Enable dexpreopt to speed boot time
-# WITH_DEXPREOPT := true
+WITH_DEXPREOPT := false
 
 # Filesystem
 TARGET_FS_CONFIG_GEN := $(PLATFORM_PATH)/config.fs
