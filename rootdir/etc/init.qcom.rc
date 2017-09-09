@@ -320,6 +320,7 @@ on boot
     chown wifi wifi /sys/class/net/bond0/bonding/queue_id
 
     # Wifi firmware reload path
+    insmod /system/lib/modules/wlan.ko
     chown wifi wifi /sys/module/wlan/parameters/fwpath
 
     # change this when HAL3 is working
