@@ -157,6 +157,10 @@ WITH_DEXPREOPT := false
 # Filesystem
 TARGET_FS_CONFIG_GEN := $(PLATFORM_PATH)/config.fs
 
+# HIDL
+DEVICE_MANIFEST_FILE := $(PLATFORM_PATH)/manifest.xml
+DEVICE_MATRIX_FILE := $(PLATFORM_PATH)/compatibility_matrix.xml
+
 # Init
 TARGET_INIT_VENDOR_LIB := libinit_z2_plus
 TARGET_RECOVERY_DEVICE_MODULES := libinit_z2_plus
