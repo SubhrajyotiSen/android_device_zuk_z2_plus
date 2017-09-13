@@ -124,8 +124,11 @@ PRODUCT_PACKAGES += \
 
 # Camera
 PRODUCT_PACKAGES += \
-    android.hardware.camera.provider@2.4-impl \
+    libcamera_shim \
+    camera.device@1.0-impl \
     camera.device@3.2-impl \
+    android.hardware.camera.provider@2.4-impl \
+    android.hardware.camera.provider@2.4-service
 
 # Connectivity Engine support (CNE)
 PRODUCT_PACKAGES += \
