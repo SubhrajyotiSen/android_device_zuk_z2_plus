@@ -70,7 +70,9 @@ service logcat_debug /system/bin/logcat -b all -f /data/logcat.txt -v threadtime
     write /sys/kernel/boot_slpi/boot 1
 
 on fs
-    wait /dev/block/bootdevice
+    wait /dev/block/platform/soc/${ro.boot.bootdevice}
+    symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
+
     mount_all fstab.qcom
     swapon_all fstab.qcom
 
@@ -353,6 +355,9 @@ on boot
     write /sys/bus/msm_subsys/devices/subsys3/restart_level "related"
     write /sys/bus/msm_subsys/devices/subsys4/restart_level "related"
     write /sys/bus/msm_subsys/devices/subsys5/restart_level "related"
+
+    # Allow access for WLAN firmware
+    chown system system /sys/module/cnss_common/parameters/bdwlan_file
 
 # msm specific files that need to be created on /data
 on post-fs-data
@@ -945,8 +950,8 @@ service qmuxd /system/bin/qmuxd
     writepid /dev/cpuset/system-background/tasks
 
 service netmgrd /system/bin/netmgrd
-    class main
-    group radio system wakelock
+    user root
+    group root wifi wakelock radio inet
     writepid /dev/cpuset/system-background/tasks
 
 service ipacm-diag /system/bin/ipacm-diag
@@ -1074,6 +1079,16 @@ service cnss_diag /system/bin/cnss_diag -q -f
 
 service cnss-daemon /system/bin/cnss-daemon -n -l
     class late_start
+    user system
+    group system inet net_admin wifi
+
+service cnss-sh /system/bin/init.cnss.sh
+    class core
+    user system
+    oneshot
+
+on property:sys.shutdown.requested=*
+    stop cnss-daemon
 
 service loc_launcher /system/bin/loc_launcher
     # loc_launcher will start as root and set its uid to gps

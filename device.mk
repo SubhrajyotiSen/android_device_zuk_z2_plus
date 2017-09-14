@@ -97,7 +97,8 @@ PRODUCT_PACKAGES += \
     libqcomvisualizer \
     libqcomvoiceprocessing \
     libvolumelistener \
-    tinymix
+    tinymix \
+    libqcomvoiceprocessingdescriptors
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/audio_effects.conf:system/vendor/etc/audio_effects.conf \
@@ -125,7 +126,6 @@ PRODUCT_PACKAGES += \
 
 # Camera
 PRODUCT_PACKAGES += \
-    libcamera_shim \
     camera.device@1.0-impl \
     camera.device@3.2-impl \
     android.hardware.camera.provider@2.4-impl \
@@ -148,13 +148,11 @@ PRODUCT_PACKAGES += \
     android.hardware.graphics.composer@2.1-impl \
     android.hardware.graphics.mapper@2.0-impl \
     android.hardware.memtrack@1.0-impl \
-    copybit.msm8996 \
     gralloc.msm8996 \
     hwcomposer.msm8996 \
     memtrack.msm8996 \
     libgenlock \
-    liboverlay \
-    libtinyxml
+    liboverlay
 
 # Doze mode
 #PRODUCT_PACKAGES += \
@@ -171,8 +169,8 @@ PRODUCT_PACKAGES += \
 
 # GPS
 PRODUCT_PACKAGES += \
-    android.hardware.gnss@1.0-impl-qti \
-    android.hardware.gnss@1.0-service-qti \
+    android.hardware.gnss@1.0-impl \
+    android.hardware.gnss@1.0-service \
     gps.msm8996 \
     libcurl \
     libgnsspps \
@@ -265,9 +263,9 @@ PRODUCT_PACKAGES += \
     libstagefrighthw
 
 # Power
-PRODUCT_PACKAGES += \
-    android.hardware.power@1.0-impl \
-    power.msm8996
+#PRODUCT_PACKAGES += \
+#    android.hardware.power@1.0-impl \
+#    power.msm8996
 
 # QMI
 PRODUCT_PACKAGES += \
@@ -309,10 +307,6 @@ PRODUCT_PACKAGES += \
     timekeep \
     TimeKeep
 
-# Sensors
-PRODUCT_PACKAGES += \
-    sensors.msm8996
-
 # USB HAL
 PRODUCT_PACKAGES += \
     android.hardware.usb@1.0-service
@@ -342,7 +336,6 @@ PRODUCT_PACKAGES += \
     wpa_supplicant.conf
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/wifi/p2p_supplicant_overlay.conf:system/etc/wifi/p2p_supplicant_overlay.conf \
     $(LOCAL_PATH)/wifi/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf \
     $(LOCAL_PATH)/wifi/fstman.ini:system/etc/wifi/fstman.ini
 

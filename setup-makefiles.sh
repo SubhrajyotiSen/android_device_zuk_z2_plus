@@ -61,9 +61,6 @@ PRODUCT_PACKAGES += \\
     qcrilmsgtunnel \\
     colorservice \\
     qcrilhook \\
-    com.qualcomm.qti.Performance.xml \\
-    libqti_performance \\
-    QPerformance \\
     ims \\
     imssettings
 EOF
