@@ -544,7 +544,7 @@ bin/rmt_storage
 bin/sensors.qcom
 etc/dpm/nsrm/NsrmConfiguration.xml
 etc/dpm/dpm.conf
-etc/sensors/hals.conf
+vendor/etc/sensors/hals.conf
 etc/sensors/sensor_def_qcomdev.conf
 etc/firmware/nvm_tlv_3.2.bin
 etc/firmware/a530v1_pm4.fw
