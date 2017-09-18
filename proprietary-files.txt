@@ -2,7 +2,6 @@ vendor/bin/qseeproxydaemon
 vendor/bin/perfd
 vendor/bin/slim_daemon
 vendor/bin/qti
-vendor/bin/thermal-engine
 vendor/bin/pd-mapper
 vendor/etc/perf-profile2.conf
 vendor/etc/perf-profile6.conf
@@ -236,7 +235,6 @@ vendor/lib/libOmxEvrcDec.so
 vendor/lib/libchromatix_s5k2m8sx_cpp_video.so
 vendor/lib/libmmcamera_isp_sce40.so
 vendor/lib/libmmcamera_tintless_algo.so
-vendor/lib/libtime_genoff.so
 vendor/lib/libqomx_jpegenc.so
 vendor/lib/libOmxMux.so
 vendor/lib/libchromatix_ov8865_hfr_90_none.so
@@ -315,7 +313,6 @@ vendor/lib64/libqmi.so
 vendor/lib64/lib-rtpsl.so
 vendor/lib64/libqti-iop-client.so
 vendor/lib64/libidl.so
-vendor/lib64/libthermalioctl.so
 vendor/lib64/libc2d30-a5xx.so
 vendor/lib64/libgsl.so
 vendor/lib64/libmdmdetect.so
@@ -425,7 +422,6 @@ vendor/lib64/libqti_performance.so
 vendor/lib64/libaudioalsa.so
 vendor/lib64/libCB.so
 vendor/lib64/libtzdrmgenprov.so
-vendor/lib64/libthermalclient.so
 vendor/lib64/libStDrvInt.so
 vendor/lib64/libOmxAmrwbplusDec.so
 vendor/lib64/libmmcamera_dbg.so
@@ -464,7 +460,6 @@ vendor/lib64/libllvm-qgl.so
 vendor/lib64/libconfigdb.so
 vendor/lib64/libOmxEvrcDec.so
 vendor/lib64/libmmcamera_tintless_algo.so
-vendor/lib64/libtime_genoff.so
 vendor/lib64/libOmxMux.so
 vendor/lib64/lib-imsxml.so
 vendor/lib64/libxtwifi_ulp_adaptor.so

@@ -199,7 +199,7 @@ BOARD_SEPOLICY_DIRS += $(PLATFORM_PATH)/sepolicy
 # Sensors
 USE_SENSOR_MULTI_HAL := true
 
-# Tap to wake 
+# Tap to wake
 TARGET_TAP_TO_WAKE_NODE := "/sys/devices/virtual/touch/tp_dev/gesture_on"
 
 # Wifi
