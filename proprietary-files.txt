@@ -650,3 +650,6 @@ usr/idc/usf_tsc_ext.idc
 bin/ssr_setup
 etc/permissions/qti-vzw-ims-internal.xml
 vendor/framework/qti-vzw-ims-internal.jar
+vendor/lib64/libthermalclient.so
+vendor/lib64/libtime_genoff.so
+vendor/lib/libtime_genoff.so
