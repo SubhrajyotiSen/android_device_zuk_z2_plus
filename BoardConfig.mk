@@ -131,6 +131,13 @@ GREEN_LED_PATH := "/sys/class/leds/led:rgb_green/brightness"
 BLUE_LED_PATH  := "/sys/class/leds/led:rgb_blue/brightness"
 BOARD_GLOBAL_CFLAGS += -DBATTERY_REAL_INFO
 
+# CM Hardware
+BOARD_HARDWARE_CLASS += $(VENDOR_PATH)/cmhw
+TARGET_TAP_TO_WAKE_NODE := "/sys/devices/virtual/touch/tp_dev/gesture_on"
+BOARD_USES_CYANOGEN_HARDWARE := true
+BOARD_HARDWARE_CLASS += \
+    hardware/cyanogen/cmhw
+
 # CNE and DPM
 BOARD_USES_QCNE := true
 
@@ -199,8 +206,6 @@ BOARD_SEPOLICY_DIRS += $(PLATFORM_PATH)/sepolicy
 # Sensors
 USE_SENSOR_MULTI_HAL := true
 
-# Tap to wake
-TARGET_TAP_TO_WAKE_NODE := "/sys/devices/virtual/touch/tp_dev/gesture_on"
 
 # Wifi
 BOARD_HAS_QCOM_WLAN := true
