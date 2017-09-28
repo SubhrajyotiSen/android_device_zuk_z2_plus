@@ -1,5 +1,5 @@
 vendor/bin/qseeproxydaemon
-vendor/bin/perfd
+vendor/bin/perfd|ad55b44f0cf3a99bda99f04a9fc411da
 vendor/bin/slim_daemon
 vendor/bin/qti
 vendor/bin/thermal-engine
@@ -45,7 +45,7 @@ vendor/lib/libchromatix_ov8865_cpp_video_full.so
 vendor/lib/libchromatix_ov8865_video_full.so
 vendor/lib/libchromatix_ov8865_default_preview_none.so
 vendor/lib/libmmcamera2_pp_buf_mgr.so
-vendor/lib/libqti-perfd-client.so
+vendor/lib/libqti-perfd-client.so|da6281dbc10118d413123806f1553eae
 vendor/lib/sensors.oem.so
 vendor/lib/libacdbmapper.so
 vendor/lib/libmmcamera_isp_ihist_stats46.so
@@ -331,7 +331,7 @@ vendor/lib64/libnetmgr.so
 vendor/lib64/libxt_native.so
 vendor/lib64/libasn1cper.so
 vendor/lib64/liblowi_wifihal.so
-vendor/lib64/libqti-perfd-client.so
+vendor/lib64/libqti-perfd-client.so|c5f74087045c5e9ffa9fed62c8af153a
 vendor/lib64/lib-rcsimssjni.so
 vendor/lib64/sensors.oem.so
 vendor/lib64/lib-imsrcscm.so
