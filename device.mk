@@ -287,3 +287,7 @@ PRODUCT_COPY_FILES += \
 # Offline charging
 ADDITIONAL_DEFAULT_PROPERTIES += \
     ro.enable_boot_charger_mode=1
+
+# FlipFlap
+PRODUCT_PACKAGES += \
+	FlipFlap
