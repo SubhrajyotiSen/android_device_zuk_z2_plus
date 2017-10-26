@@ -20,6 +20,15 @@
         android:title="@string/button_title"
 	xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+
+    <com.crdroid.settings.fragments.ButtonBacklightBrightness
+        android:key="button_backlight"
+	android:icon="@drawable/backlight_icon"
+        android:title="@string/button_backlight_title"
+        android:summary="@string/button_backlight_summary"
+	android:dialogTitle="@string/button_backlight_title"
+        android:persistent="false" />
+
     <PreferenceCategory
         android:key="power_key"
         android:title="@string/hardware_keys_power_key_title" >
