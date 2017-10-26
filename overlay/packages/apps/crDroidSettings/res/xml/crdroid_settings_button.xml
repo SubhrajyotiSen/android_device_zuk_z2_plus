@@ -27,7 +27,8 @@
         android:title="@string/button_backlight_title"
         android:summary="@string/button_backlight_summary"
 	android:dialogTitle="@string/button_backlight_title"
-        android:persistent="false" />
+        android:persistent="false"
+	android:layout="@layout/empty_layout" />
 
     <PreferenceCategory
         android:key="power_key"
