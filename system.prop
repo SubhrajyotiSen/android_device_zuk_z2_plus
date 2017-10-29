@@ -33,10 +33,7 @@ ro.bluetooth.hfp.ver=1.7
 
 # Camera
 media.camera.ts.monotonic=0
-persist.camera.imglib.fddsp=1
-persist.camera.llc=1
-persist.camera.llnoise=1
-persist.camera.stats.test=0
+persist.camera.stats.test=5
 camera.disable_zsl_mode=1
 
 # CNE
