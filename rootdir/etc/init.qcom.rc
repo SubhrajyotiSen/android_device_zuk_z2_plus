@@ -27,7 +27,6 @@
 
 import init.qcom.power.rc
 import init.qcom.usb.rc
-import init.target.rc
 
 on early-init
     mkdir /firmware 0771 system system
@@ -1134,11 +1133,25 @@ service qseeproxydaemon /system/vendor/bin/qseeproxydaemon
     group system
     writepid /dev/cpuset/system-background/tasks
 
+<<<<<<< HEAD
 # Seemp health service
 service seemp_healthd /system/vendor/bin/seemp_healthd
     class late_start
     user system
     group system
+=======
+service thermal-engine /system/vendor/bin/thermal-engine
+   class main
+   user root
+   socket thermal-send-client stream 0666 system system
+   socket thermal-recv-client stream 0660 system system
+   socket thermal-recv-passive-client stream 0666 system system
+   group root
+   socket thermal-send-client stream 0666 system system
+   socket thermal-recv-client stream 0660 system system
+   socket thermal-recv-passive-client stream 0666 system system
+   writepid /dev/cpuset/system-background/tasks
+>>>>>>> 2b511b5... Remove init.target.rc.
 
 # Slpi restart
 on property:slpi.restart=1
