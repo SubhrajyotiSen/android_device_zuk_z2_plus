@@ -29,7 +29,7 @@ TARGET_OTA_ASSERT_DEVICE := z2plus,z2_plus
 DEVICE_PATH := device/zuk/z2_plus
 
 # Kernel
-TARGET_KERNEL_CONFIG := z2_plus_defconfig
+TARGET_KERNEL_CONFIG := heliox_z2_plus_defconfig
 
 # Audio
 AUDIO_FEATURE_ENABLED_SPKR_PROTECTION := true
