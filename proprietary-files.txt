@@ -652,3 +652,4 @@ framework/tcmclient.jar
 usr/idc/usf_tsc_ptr.idc
 usr/idc/usf_tsc.idc
 usr/idc/usf_tsc_ext.idc
+bin/ssr_setup
