@@ -653,3 +653,5 @@ usr/idc/usf_tsc_ptr.idc
 usr/idc/usf_tsc.idc
 usr/idc/usf_tsc_ext.idc
 bin/ssr_setup
+etc/permissions/qti-vzw-ims-internal.xml
+vendor/framework/qti-vzw-ims-internal.jar
