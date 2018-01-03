@@ -24,9 +24,9 @@ $(call inherit-product, device/zuk/z2_plus/device.mk)
 TARGET_BOOT_ANIMATION_RES := 1080
 
 # Inherit some common AOSP-OMS stuff.
-$(call inherit-product, vendor/aosp/common.mk)
+$(call inherit-product, vendor/validus/config/common_full_phone.mk)
 
-PRODUCT_NAME := aosp_z2_plus
+PRODUCT_NAME := validus_z2_plus
 PRODUCT_DEVICE := z2_plus
 PRODUCT_MANUFACTURER := ZUK
 PRODUCT_BRAND := ZUK
